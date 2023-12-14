@@ -9,12 +9,6 @@
   top: 0;
   left: 0;
   min-height: 100px;
-  background: linear-gradient(
-    90deg,
-    rgb(205, 240, 248) 0%,
-    rgb(108, 224, 245) 52%,
-    rgb(2, 122, 131) 100%
-  );
 }
 
 .is-hidden {

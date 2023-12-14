@@ -10,13 +10,13 @@ export function handleHeaderScroll() {
     if (currentScroll > lastScrollTop) {
       if (scrollDirection !== 'down') {
         scrollDirection = 'down';
-        // header.classList.add('hidden');
+
         (header, input, searchForm).classList.add('hidden');
       }
     } else {
       if (scrollDirection !== 'up') {
         scrollDirection = 'up';
-        //header.classList.remove('hidden');
+
         (header, input, searchForm).classList.remove('hidden');
       }
     }

@@ -11,14 +11,15 @@ const searchForm = document.querySelector('.search-form');
 const btnLoadMore = document.querySelector('.load-more');
 const header = document.querySelector('.header');
 const input = document.querySelector('.input');
-
-const perPage = 40;
-let page = 1;
-let keyOfSearchPhoto = '';
 const lightbox = new SimpleLightbox('.gallery a', {
   captionPosition: 'bottom',
   captionDelay: 250,
 });
+
+const perPage = 40;
+let page = 1;
+let keyOfSearchPhoto = '';
+
 btnLoadMore.classList.add('is-hidden');
 handleHeaderScroll();
 
@@ -51,6 +52,7 @@ async function onSearch(evt) {
 
 async function onLoadMoreClick() {
   page += 1;
+
   try {
     await galleryPhoto(keyOfSearchPhoto, page, perPage);
   } catch (error) {
@@ -103,7 +105,7 @@ async function galleryPhoto(keyOfSearchPhoto, page, perPage) {
     Notiflix.Notify.info(
       "We're sorry, but you've reached the end of search results."
     );
-
+    //lightbox.refresh();
     btnLoadMore.classList.add('is-hidden');
   }
 }

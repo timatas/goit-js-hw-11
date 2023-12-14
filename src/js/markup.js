@@ -1,6 +1,4 @@
 import { gallery } from './index';
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 
 export function selectMarkup(arr) {
   const addOptionSelect = arr
@@ -35,9 +33,4 @@ export function selectMarkup(arr) {
     )
     .join('');
   gallery.insertAdjacentHTML('beforeend', addOptionSelect);
-
-  const lightbox = new SimpleLightbox('.gallery a', {
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
 }
