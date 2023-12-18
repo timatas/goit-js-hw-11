@@ -36,6 +36,7 @@ async function onSearch(evt) {
 
   if (inputQuery === '') {
     Notiflix.Notify.info('There isn`t data for search');
+    btnLoadMore.classList.add('is-hidden');
     return;
   }
 
@@ -43,10 +44,12 @@ async function onSearch(evt) {
     await galleryPhoto(inputQuery, page, perPage);
     input.value = ' ';
     keyOfSearchPhoto = inputQuery;
+    btnLoadMore.classList.remove('is-hidden');
   } catch (error) {
     Notiflix.Notify.info(
       'Sorry, there are no images matching your search query. Please try again.'
     );
+    btnLoadMore.classList.add('is-hidden');
   }
 }
 
